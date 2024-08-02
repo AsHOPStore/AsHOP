@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+            integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link href="./output.css" rel="stylesheet" />
+        <style>
+            .productDetailOpen {
+                display: flex;
+            }
+            .productDetailClosed {
+                display: none;
+            }
+            .productDetailNormal {
+                top: 0;
+            }
+
+            .productDetailSmall {
+                bottom: 0;
+            }
+            .title {
+                position: absolute;
+                left: calc(50% - 87px);
+                bottom: 0;
+                margin-bottom: -40px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+            .title:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            }
+
+            @media (max-width: 639px) {
+                .title {
+                    margin-bottom: -40px; /* Adjust overlap for smaller screens if needed */
+                }
+            }
+            @media (min-width: 490px) {
+                .itemsMiddleScreen {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+            @media (max-width: 489px) {
+                .mb-last-characters {
+                    margin-bottom: 2rem;
+                }
+            }
+            @media (min-width: 490px) and (max-width: 639px) {
+                .mb-last-characters-continue {
+                    margin-bottom: 4rem;
+                }
+            }
+
+            @media (min-width: 640px) and (max-width: 767px) {
+                .mb-md-character {
+                    margin-bottom: 4rem;
+                }
+            }
+        </style>
+        <title>AsHOP</title>
+    </head>
+    <body class="h-full m-0">
+        <aside
+            id="aside"
+            class="productDetailClosed overflow-y-scroll sm:overflow-hidden sm:productDetailNormal productDetailSmall fixed right-0 h-[40vh] w-full flex-col rounded-lg border border-black bg-white sm:h-[calc(100vh-68px)] sm:w-[360px]"
+        >
+            <div class="flex items-center justify-between p-6">
+                <h2 class="text-xl font-medium">Detalles</h2>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <figure class="h-[360px] px-6">
+                <img class="h-full w-full rounded-lg" src="" alt="" />
+            </figure>
+            <p class="flex flex-col p-6">
+                <span class="mb-2 text-2xl font-medium">$</span>
+                <span class="text-md mb-2 font-medium"></span>
+            </p>
+        </aside>
+        <header class="w-full h-full sm:h-screen relative">
+            <figure class="w-full h-full">
+                <img
+                    class="h-full w-full"
+                    src="../assets/headerImg.jpeg"
+                    alt="animeBanner"
+                />
+                <h1
+                    class="p-3 absolute title title-sm font-bold text-5xl bg-white rounded-2xl"
+                >
+                    AsHOP
+                </h1>
+            </figure>
+        </header>
+
+        <main class="flex flex-col h-screen">
+            <section class="py-20 px-4 bg-slate-500">
+                <div class="text-center">
+                    <h2 class="text-4xl mb-8">Contactos</h2>
+                </div>
+                <div class="grid grid-cols-2 gap-4 text-center">
+                    <div>
+                        <a href="https://wa.me/6624679029" target="_blank"
+                            ><i class="fa-brands fa-whatsapp fa-3x"></i
+                        ></a>
+                        <h3 class="mt-4">6624679029</h3>
+                    </div>
+                    <div>
+                        <a
+                            href="https://www.instagram.com/alex_cf_p?igsh=aDJ5b3ptYjB2Z3I0"
+                            target="_blank"
+                            ><i class="fab fa-instagram fa-3x"></i
+                        ></a>
+                        <h3 class="mt-4">alex_cf_p</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section class="py-14 px-4">
+                <div class="text-center">
+                    <h2 class="text-4xl">Figuras</h2>
+                </div>
+                <div class="mt-8">
+                    <h3 class="text-2xl sm:text-start text-center">
+                        Proporcionales:
+                    </h3>
+                </div>
+                <div
+                    class="md:flex md:flex-wrap grid-cols-1 itemsMiddleScreen mt-4 grid place-items-center"
+                >
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Iguro.jpeg"
+                            alt="IguroMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Iguro Obanai</span>
+                            <span class="font-bold text-2xl">$89</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Tengen.jpeg"
+                            alt="Tengen-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Tengen Uzui</span>
+                            <span class="font-bold text-2xl">$109</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Shinobu.jpeg"
+                            alt="Shinobu-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Shinobu Kocho</span>
+                            <span class="font-bold text-2xl">$89</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Mitsuri.jpeg"
+                            alt="Kanjori-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kanroji Mitsuri</span>
+                            <span class="font-bold text-2xl">$99</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Rengoku.jpeg"
+                            alt="Rengoku-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Rengoku Kyojuro</span>
+                            <span class="font-bold text-2xl">$99</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 sm:mb-16 mb-last-characters-continue mb-last-characters"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Proporcionales/Shinazugawa.jpeg"
+                            alt="Shinazugawa"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Shinazugawa Sanemi</span>
+                            <span class="font-bold text-2xl">$99</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="py-14 px-4">
+                <div>
+                    <h3 class="text-2xl sm:text-start text-center">
+                        Cabezones:
+                    </h3>
+                </div>
+                <div
+                    class="md:flex md:flex-wrap grid-cols-1 itemsMiddleScreen mt-4 grid place-items-center md:place-items-baseline"
+                >
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/TokitoC.jpeg"
+                            alt="MuichiroCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Muichiro Tokito</span>
+                            <span class="font-bold text-2xl">$139</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-16 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/ZenitsuC.jpeg"
+                            alt="AgatsumaCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Agatsuma Zenitsu</span>
+                            <span class="font-bold text-2xl">$139</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-4 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/NezukoC.jpeg"
+                            alt="NezukoCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kamado Nezuko</span>
+                            <span class="font-bold text-2xl">$149</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/RengokuC.jpeg"
+                            alt="RengokuCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Rengoku Kyojuro </span>
+                            <span class="font-bold text-2xl">$149</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/ShinobuC.jpeg"
+                            alt="ShinobuCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Shinobu Kocho</span>
+                            <span class="font-bold text-2xl">$149</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/TanjiroC.jpeg"
+                            alt="KamadoCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kamado Tanjiro</span>
+                            <span class="font-bold text-2xl">$149</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/MitsuriC.jpeg"
+                            alt="KanjoriCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kanroji Mitsuri</span>
+                            <span class="font-bold text-2xl">$129</span>
+                        </p>
+                    </div>
+                    <div class="cursor-pointer img h-60 w-56 mb-8 mr-8">
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Cabezones/TomiokaC.jpeg"
+                            alt="TomiokaCabezon-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Tomioka Giyuu</span>
+                            <span class="font-bold text-2xl">$129</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="py-14 px-4">
+                <div>
+                    <h3 class="text-2xl sm:text-start text-center">Minis</h3>
+                </div>
+                <div
+                    class="md:flex md:flex-wrap grid-cols-1 itemsMiddleScreen mt-4 grid place-items-center md:place-items-baseline"
+                >
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/ObanaiM.jpeg"
+                            alt="IguroMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Iguro Obanai </span>
+                            <span class="font-bold text-2xl">$49</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/GyomeiM.jpeg"
+                            alt="GyomeiMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Gyomei Himejima</span>
+                            <span class="font-bold text-2xl">$49</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/TengenM.jpeg"
+                            alt="TengenMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Tengen Uzui</span>
+                            <span class="font-bold text-2xl">$39</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/ShinobuM.jpeg"
+                            alt="ShinobuMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Shinobu Kocho</span>
+                            <span class="font-bold text-2xl">$49</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/TanjiroM.jpeg"
+                            alt="TanjiroMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kamado Tanjiro</span>
+                            <span class="font-bold text-2xl">$29</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/RengokuM.jpeg"
+                            alt="RengokuMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Rengoku Kyojuro</span>
+                            <span class="font-bold text-2xl">$49</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character md:mb-16 mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/MitsuriM.jpeg"
+                            alt="KanrojiMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Kanroji Mitsuri</span>
+                            <span class="font-bold text-2xl">$49</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/SanemiM.jpeg"
+                            alt="ShinazugawaMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Shinazugawa Sanemi</span>
+                            <span class="font-bold text-2xl">$19</span>
+                        </p>
+                    </div>
+                    <div
+                        class="cursor-pointer img h-60 w-56 mr-8 mb-md-character mb-16"
+                    >
+                        <img
+                            class="h-full w-full"
+                            src="../assets/Minis/TokitoM.jpeg"
+                            alt="MuichiroMini-demonSlayer"
+                        />
+                        <p class="flex flex-col justify-center text-left">
+                            <span class="text-xl">Muichiro Tokito</span>
+                            <span class="font-bold text-2xl">$19</span>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div></div>
+        </footer>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
